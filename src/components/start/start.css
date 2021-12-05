@@ -1,0 +1,29 @@
+.welcome-circle{
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.welcome-circle a{
+    text-decoration: none;
+}
+
+.welcome-circle__text{
+    font-size: 90px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    color: #6e5ebd;
+}
+
+.congratulations{
+    position: absolute;
+    top: 40px;
+    font-size: 50px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;;
+}

@@ -1,0 +1,46 @@
+.tiles-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tiles-header h1{
+    margin-bottom: 0;
+}
+
+.tiles{
+    width: 575px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid #6e5ebd;
+    border-radius: 5px;
+}
+
+.tiles__tile{
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    border: solid 1px #d3cece;
+    border-radius: 5px;
+    /* margin: 10px; */
+    cursor: pointer;
+    /* background-size: 64px 128px; */
+}
+
+.tiles__tile--front{
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    /* position: relative; */
+    transform: rotateY(180deg);
+}
+
+.tiles__tile--back{
+    transform: rotateY(0deg);
+}
+
+.tiles__tile--correct{
+    transform: rotateY(0deg);
+    opacity: 0;
+}
