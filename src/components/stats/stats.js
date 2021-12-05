@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { ActionCreator } from '../../store/actions';
-import { uniqueCardsArray } from '../../store/reducer';
 import './stats.css';
 
 function Stats() {

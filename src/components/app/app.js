@@ -1,6 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Start from '../start/start';
 import Game from '../game/game';
+import { AppRoute } from '../../const';
 
 import './app.css';
 
@@ -10,7 +11,7 @@ function App() {
     <div className="container">
       <BrowserRouter>
         <Switch>
-          <Route path='/game'>
+          <Route path={AppRoute.Game}>
             <Game />
           </Route>
           <Route>

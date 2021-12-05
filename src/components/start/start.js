@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ActionCreator } from '../../store/actions';
-import { uniqueCardsArray } from '../../store/reducer';
+import { AppRoute, uniqueCardsArray } from '../../const';
 import './start.css';
 
 function Start() {
@@ -20,7 +20,7 @@ function Start() {
                     dispatch(ActionCreator.resetClosedCards());
                     dispatch(ActionCreator.resetCards());
                 }}>
-                <Link to="/game">
+                <Link to={AppRoute.Game}>
                     <h1 className="welcome-circle__text">
                         Start
                     </h1>
@@ -28,8 +28,6 @@ function Start() {
             </div>
 
         </>
-
-
     );
 }
 

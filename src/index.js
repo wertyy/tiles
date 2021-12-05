@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './components/app/app';
 import { reducer } from './store/reducer';
 import { Provider } from 'react-redux';
 import { createStore, compose , applyMiddleware} from 'redux';
-
+import './index.css';
 
 const composeEnhancers =
     typeof window === 'object' && process.env.NODE_ENV === 'development' &&

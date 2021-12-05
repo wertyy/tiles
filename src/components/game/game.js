@@ -1,14 +1,24 @@
 
 import { useEffect, useRef } from 'react';
-import { uniqueCardsArray } from '../../store/reducer';
+import { AppRoute, uniqueCardsArray } from '../../const';
 import Stats from '../stats/stats';
-
 import { useDispatch, useSelector } from 'react-redux';
-
+import { Redirect } from 'react-router';
 import { ActionCreator } from '../../store/actions';
 
 import './game.css';
-import { Redirect } from 'react-router';
+
+
+
+const getClassName = (isOpened, isClosed) => {
+    if (isClosed) {
+        return 'tiles__tile--correct';
+    } else if (isOpened) {
+        return 'tiles__tile--front';
+    } else {
+        return 'tiles__tile--back';
+    }
+};
 
 export default function Game() {
     const tiles = useSelector(state => state.allCards);
@@ -36,22 +46,9 @@ export default function Game() {
         };
     }, [openedTiles]);
 
-
-    const getClassName = (isOpened, isClosed) => {
-        if (isClosed) {
-            return 'tiles__tile--correct';
-        } else if (isOpened) {
-            return 'tiles__tile--front';
-        } else {
-            return 'tiles__tile--back';
-        }
-    };
-
-
-
     return (
         <>
-            {uniqueCardsArray.length === closedCards.length && <Redirect to="/start" />}
+            {uniqueCardsArray.length === closedCards.length && <Redirect to={AppRoute.Start} />}
             <div className="tiles-header">
                 <p> Choose two cards with same content consequtively to make them vanish </p>
             </div>

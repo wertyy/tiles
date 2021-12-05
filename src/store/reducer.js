@@ -1,40 +1,5 @@
 import { ActionType } from './actions';
-
-export const uniqueCardsArray = [
-    {
-        type: "green",
-        color: "green"
-    },
-    {
-        type: "blue",
-        color: "blue"
-    },
-    {
-        type: "red",
-        color: "red"
-    },
-    {
-        type: "yellow",
-        color: "yellow"
-    },
-    {
-        type: "violet",
-        color: "violet"
-    },
-    {
-        type: "orange",
-        color: "orange"
-    },
-    {
-        type: "black",
-        color: "black"
-    },
-    {
-        type: "pink",
-        color: "pink"
-    }
-];
-
+import { uniqueCardsArray } from '../const';
 
 const InitialSate = {
     allCards: [...uniqueCardsArray, ...uniqueCardsArray].sort(() => (Math.random() > .5) ? 1 : -1),
@@ -63,8 +28,11 @@ export const reducer = (state = InitialSate, action) => {
         case ActionType.SET_CARDS: {
             return { ...state, allCards: [...uniqueCardsArray, ...uniqueCardsArray].sort(() => (Math.random() > .5) ? 1 : -1) }
         }
+        default:{
+            return state;
+        }
     }
-    return state;
+    
 }
 
 
